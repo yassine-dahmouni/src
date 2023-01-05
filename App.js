@@ -1,165 +1,147 @@
 // import AfficherCom from './AfficherCom';
-// import Navigation from './yaassine/Navigation';
 // import Yas from './yaassine/Yas.css';
+// import "./yaassine/frm.css";
+
+// import Home from './yaassine/Home';
+// import Blog from './yaassine/Blog';
+// import About from './yaassine/About';
+// import { RouterProvider } from 'react-router-dom';
+// import { createBrowserRouter} from "react-router-dom";
 
 import React, { useState } from 'react';
-import "./yaassine/frm.css";
 
 
 
 
+////////////// url /////////
 
-    const lignes=[
+// function App() {
 
-        {id:'l1', nom:'Ligne1', arrets:[
+//   const router = createBrowserRouter([
 
-    ]  },
-        
-        {id:'l2', nom:'Ligne2', arrets:[
-            
-            {codeA:'Adarissa', ordreA : 1},
-             {codeA: 'Saada', ordreA : 2},
-             {codeA: 'Atlas', ordreA : 3} 
-        ]},
+//     {  path:"/" , element:<Home /> }     ,
 
-        {id:'l3', nom:'Ligne3', arrets:[
+//    { path:"/about" , element:<About />}  ,
 
-            
-        { codeA:'A', ordreA : 1}, 
-        {codeA: 'D', ordreA : 2},
-        {codeA: 's', ordreA : 3}
-        ]},
-        {id:'l4', nom:'Ligne4', arrets:[]},
-    ]
-
-    export default function Form() {
-
-        const [id,setId]=useState('');
-        const [info,setInfo]=useState(lignes[0]);
-        const [nv,setNv]=useState('');
-
-        function remplace(){
-            setInfo(lignes.find((x)=>x.id==id))
-        }
-
-
-
-       function ajouter(){
-        info.arrets.push({codeA:nv,ordreA:info.arrets.length+1});
-        
-        
-       }
-    
-    
-
-      return (
-        <div>
-            
-            <form>
-                <h1>Gestion des lignes bus</h1>
-
-                <div className='bt'>
-                <label>Num ligne </label>
-                <input type='text' className='rp' onChange={(e)=>{setId(e.target.value)}}></input>
-                <input type='button' value='Rechercher' onClick={remplace}/> 
-                </div>
-
-                <div className='cnt'>
-                <label>Arret de depart</label> 
-                <p className='pr'>{info ? info.arrets.codeA :''}</p>
-                </div>
-
-                <div className='cnt'>
-                <label>Arret Terminus</label>
-                <p  className='pr'>{info?info.arrets[info.arrets.length-1].codeA:''}</p>
-                </div>
-
-                <div className='bt'>
-                <label>Nouvel arret</label>
-                <input type='text' className='rp' onChange={(e)=>setNv(e.target.value)} />
-                <input type='button' value='Ajouter arret' onClick={ajouter}/>
-                </div>
-
-                <div className='df'>
-                    <p>Nom de l'arret</p>
-                    <p>order de passage</p>
-                </div>
-                
-                <table border='1'>
-                      {info?info.arrets.map((arret)=>(
-                        <tr key={arret.ordreA}>
-
-                            <td>{arret.codeA}</td>  
-                            <td>{arret.ordreA}</td>
-                            
-                            <td><input type='reset' value='Supprimer' onClick={(e)=>e.target.parentNode.parentNode.style.display='none'}/></td>
-                        </tr>
-                    )):''}
-                </table>
-
-            </form>
-        </div>
-      )
-    }
-
-
-
-
-
-
+//     { path:"/blog" , element:<Blog />} 
+//   ])
 //   return (
-//     <div>
-        
-//         <form>
-//             <h1>Gestion des lignes bus</h1>
+//     <>
 
-//             <div className='bt'>
-//             <label>Num ligne </label>
-//             <input type='text' className='rp' onChange={(e)=>{setId(e.target.value)}}/>
-//             <input type='button' value='Rechercher' onClick={recherch}/> 
-//             </div>n
+//     <RouterProvider  router={router}/>
 
-//             <div className='cnt'>
-//             <label>Arret de depart</label>
-//             <p className='pr'>{info?info.arrets[0].codeA:''}</p>
-//             </div>
-
-//             <div className='cnt'>
-//             <label>Arret Terminus</label>
-//             <p className='pr'>{info?info.arrets[info.arrets.length-1].codeA:''}</p>
-//             </div>
-
-//             <div className='bt'>
-//             <label>Nouvel arret</label>
-//             <input type='text' className='rp' onChange={(e)=>{setNv(e.target.value)}}/>
-//             <input type='button' value='Ajuter arret' onClick={ajouter}/>
-//             </div>
-
-//             <table border='1'>
-//                 <thead>
-//                     <tr>
-//                         <th>Nom de l'arret</th>
-//                         <th colSpan='2'>ordre de passage</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
-//                   {info?info.arrets.map((arret,i)=>(
-//                     <tr key={i}>
-//                         <td>{arret.codeA}</td>
-//                         <td>{arret.ordreA}</td>
-//                         <td><input type="reset" value='Supprimer' onClick={sup(i)} /></td>
-//                     </tr>
-//                   )):''}
-//                 </tbody>
-//             </table>
-//         </form>
-//     </div>
-//   )
+//     </>
+//   );
 // }
 
+// export default App;
+
+
+///////////////// formular ///////////
+
+    // const lignes=[
+
+    //     {id:'l1', nom:'Ligne1', arrets:[
+
+    //     {codeA:'A', ordreA : 1}, 
+    //     {codeA: 'D', ordreA : 2},
+    //     {codeA: 's', ordreA : 3}]  },
+        
+    //     {id:'l2', nom:'Ligne2', arrets:[
+            
+    //         {codeA:'Adarissa', ordreA : 1},
+    //          {codeA: 'Saada', ordreA : 2},
+    //          {codeA: 'Atlas', ordreA : 3} 
+    //     ]},
+
+    //     {id:'l3', nom:'Ligne3', arrets:[
+
+            
+
+
+    //     ]},
+    //     {id:'l4', nom:'Ligne4', arrets:[]},
+    // ]
+
+    // export default function Form() {
+
+    //     const [id,setId]=useState('');
+    //     const [info,setInfo]=useState(lignes[0]);
+    //     const [nv,setNv]=useState('');
+
+    //     function remplace(){
+    //         setInfo(lignes.find((x)=>x.id==id))
+    //     }
 
 
 
+    //    function ajouter(){
+    //     info.arrets.push({codeA:nv,ordreA:info.arrets.length+1});
+        
+        
+    //    }
+    
+    
+
+    //   return (
+    //     <div>
+            
+    //         <form>
+    //             <h1>Gestion des lignes bus</h1>
+
+    //             <div className='bt'>
+    //             <label>Num ligne </label>
+    //             <input type='text' className='rp' onChange={(e)=>{setId(e.target.value)}}></input>
+    //             <input type='button' value='Rechercher' onClick={remplace}/> 
+    //             </div>
+
+    //             <div className='cnt'>
+    //             <label>Arret de depart</label> 
+    //             <p className='pr'>{info ? info.arrets[0].codeA :''}</p>
+    //             </div>
+
+    //             <div className='cnt'>
+    //             <label>Arret Terminus</label>
+    //             <p  className='pr'>{info?info.arrets[info.arrets.length-1].codeA:''}</p>
+    //             </div>
+
+    //             <div className='bt'>
+    //             <label>Nouvel arret</label>
+    //             <input type='text' className='rp' onChange={(e)=>setNv(e.target.value)} />
+    //             <input type='button' value='Ajouter arret' onClick={ajouter}/>
+    //             </div>
+
+    //             <div className='df'>
+    //                 <p>Nom de l'arret</p>
+    //                 <p>order de passage</p>
+    //             </div>
+                
+    //             <table border='1'>
+    //                   {info?info.arrets.map((arret)=>(
+    //                     <tr key={arret.ordreA}>
+
+    //                         <td>{arret.codeA}</td>  
+    //                         <td>{arret.ordreA}</td>
+                            
+    //                         <td><input type='reset' value='Supprimer' onClick={(e)=>e.target.parentNode.parentNode.style.display='none'}/></td>
+    //                     </tr>
+    //                 )):''}
+    //             </table>
+
+    //         </form>
+    //     </div>
+    //   )
+    // }
+
+
+
+
+
+
+
+
+
+/////////// controle I ///////////////
 
 
 //  function App() {
@@ -223,7 +205,7 @@ import "./yaassine/frm.css";
 
 
 
-//////// onClick //////////
+// ////// onClick //////////
 
 // export default class yas extends React.Component  {
 
