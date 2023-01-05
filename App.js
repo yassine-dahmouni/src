@@ -1,12 +1,6 @@
-// import React from 'react';
 // import AfficherCom from './AfficherCom';
-// import Home from './yaassine/Home';
-// import Blog from './yaassine/Blog';
-// import About from './yaassine/About';
 // import Navigation from './yaassine/Navigation';
-// import {Routes,Route} from 'react-router-dom'; 
 // import Yas from './yaassine/Yas.css';
-// import "./yaassine/formulair/frm.css";
 
 import React, { useState } from 'react';
 import "./yaassine/frm.css";
@@ -14,98 +8,99 @@ import "./yaassine/frm.css";
 
 
 
-    // const lignes=[
 
-    //     {id:'l1', nom:'Ligne1', arrets:[
+    const lignes=[
 
-    // ]  },
+        {id:'l1', nom:'Ligne1', arrets:[
+
+    ]  },
         
-    //     {id:'l2', nom:'Ligne2', arrets:[
+        {id:'l2', nom:'Ligne2', arrets:[
             
-    //         {codeA:'Adarissa', ordreA : 1},
-    //          {codeA: 'Saada', ordreA : 2},
-    //          {codeA: 'Atlas', ordreA : 3} 
-    //     ]},
+            {codeA:'Adarissa', ordreA : 1},
+             {codeA: 'Saada', ordreA : 2},
+             {codeA: 'Atlas', ordreA : 3} 
+        ]},
 
-    //     {id:'l3', nom:'Ligne3', arrets:[
+        {id:'l3', nom:'Ligne3', arrets:[
 
             
-    //     { codeA:'A', ordreA : 1}, 
-    //     {codeA: 'D', ordreA : 2},
-    //     {codeA: 's', ordreA : 3}
-    //     ]},
-    //     {id:'l4', nom:'Ligne4', arrets:[]},
-    // ]
+        { codeA:'A', ordreA : 1}, 
+        {codeA: 'D', ordreA : 2},
+        {codeA: 's', ordreA : 3}
+        ]},
+        {id:'l4', nom:'Ligne4', arrets:[]},
+    ]
 
-    // export default function Form() {
+    export default function Form() {
 
-    //     const [id,setId]=useState('');
-    //     const [info,setInfo]=useState(lignes[0]);
-    //     const [nv,setNv]=useState('');
+        const [id,setId]=useState('');
+        const [info,setInfo]=useState(lignes[0]);
+        const [nv,setNv]=useState('');
 
-    //     function remplace(){
-    //         setInfo(lignes.find((x)=>x.id==id))
-    //     }
+        function remplace(){
+            setInfo(lignes.find((x)=>x.id==id))
+        }
 
 
 
-    //    function ajouter(){
-    //     info.arrets.push({codeA:nv,ordreA:info.arrets.length+1});
+       function ajouter(){
+        info.arrets.push({codeA:nv,ordreA:info.arrets.length+1});
         
         
-    //    }
+       }
     
     
 
-    //   return (
-    //     <div>
+      return (
+        <div>
             
-    //         <form>
-    //             <h1>Gestion des lignes bus</h1>
+            <form>
+                <h1>Gestion des lignes bus</h1>
 
-    //             <div className='bt'>
-    //             <label>Num ligne </label>
-    //             <input type='text' className='rp' onChange={(e)=>{setId(e.target.value)}}></input>
-    //             <input type='button' value='Rechercher' onClick={remplace}/> 
-    //             </div>
+                <div className='bt'>
+                <label>Num ligne </label>
+                <input type='text' className='rp' onChange={(e)=>{setId(e.target.value)}}></input>
+                <input type='button' value='Rechercher' onClick={remplace}/> 
+                </div>
 
-    //             <div className='cnt'>
-    //             <label>Arret de depart</label> 
-    //             <p className='pr'>{info ? info.arrets.codeA :''}</p>
-    //             </div>
+                <div className='cnt'>
+                <label>Arret de depart</label> 
+                <p className='pr'>{info ? info.arrets.codeA :''}</p>
+                </div>
 
-    //             <div className='cnt'>
-    //             <label>Arret Terminus</label>
-    //             <p  className='pr'>{info?info.arrets[info.arrets.length-1].codeA:''}</p>
-    //             </div>
+                <div className='cnt'>
+                <label>Arret Terminus</label>
+                <p  className='pr'>{info?info.arrets[info.arrets.length-1].codeA:''}</p>
+                </div>
 
-    //             <div className='bt'>
-    //             <label>Nouvel arret</label>
-    //             <input type='text' className='rp' onChange={(e)=>setNv(e.target.value)} />
-    //             <input type='button' value='Ajouter arret' onClick={ajouter}/>
-    //             </div>
+                <div className='bt'>
+                <label>Nouvel arret</label>
+                <input type='text' className='rp' onChange={(e)=>setNv(e.target.value)} />
+                <input type='button' value='Ajouter arret' onClick={ajouter}/>
+                </div>
 
-    //             <div className='df'>
-    //                 <p>Nom de l'arret</p>
-    //                 <p>order de passage</p>
-    //             </div>
+                <div className='df'>
+                    <p>Nom de l'arret</p>
+                    <p>order de passage</p>
+                </div>
                 
-    //             <table border='1'>
-    //                   {info?info.arrets.map((arret)=>(
-    //                     <tr key={arret.ordreA}>
+                <table border='1'>
+                      {info?info.arrets.map((arret)=>(
+                        <tr key={arret.ordreA}>
 
-    //                         <td>{arret.codeA}</td>  
-    //                         <td>{arret.ordreA}</td>
+                            <td>{arret.codeA}</td>  
+                            <td>{arret.ordreA}</td>
                             
-    //                         <td><input type='reset' value='Supprimer' onClick={(e)=>e.target.parentNode.parentNode.style.display='none'}/></td>
-    //                     </tr>
-    //                 )):''}
-    //             </table>
+                            <td><input type='reset' value='Supprimer' onClick={(e)=>e.target.parentNode.parentNode.style.display='none'}/></td>
+                        </tr>
+                    )):''}
+                </table>
 
-    //         </form>
-    //     </div>
-    //   )
-    // }
+            </form>
+        </div>
+      )
+    }
 
 
 
@@ -256,80 +251,11 @@ import "./yaassine/frm.css";
 
 
 
-// function App() {
-//   return (
-//     <div className="main-route-place" style={{display:'flex',justifyContent:'space-around'}}>
-//       <Home/>
-//       <About/>
-//       <Blog/>
-
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/about" element={<About />} />
-//         <Route path="/blog" element={<Blog />} />
-//       </Routes>
-
-//       <Navigation/>
 
 
 
-//       </div>
-    
-//   );
-// }export default App;
-
-/////////// formulaire  //////////
-
-// export default function App() {
 
 
-//   const bus=[
-//     {id:'t1',nom:'Fennec',villes:[]},
-//     {id:'t2',nom:'cfd',villes:[]},
-//     {id:'t3',nom:'Fede3ec',villes:[]},
-//     {id:'t4',nom:'cdec',villes:[]}
-// ]
-// const [idT, setIdt]=useState('');
-// const [info, setInfo]=useState(bus[0]);
-// const [NV, setNv]=useState('');
-
-// function recherch(){
-//     setInfo(bus.find((x)=>x.id===idT));
-// }
-
-// function ajouter(){
-//     info.villes.push(NV);
-// }
-
-//   return (
-//     <div>
-// {            
-//             id <input type='text' onChange={(e)=>setIdt(e.target.value)}/> 
-//             <button onClick={recherch}>Rechercher</button> <br/>
-//             nom <h2>{info?info.nom:''}</h2> <br />
-//             ville depart<h2>{info?info.villes[0]:''}</h2> <br />
-//             ville terninus <h2>{info?info.villes[info.villes.length-1]:''}</h2> <br />
-//             Nouvelle ville de passage <input type='text' onChange={(e)=>setNv(e.target.value)}/> <button onClick={ajouter}>charger</button> <br /> */}
-//             { <table>
-//                 <thead>
-//                     <tr>
-//                         <th>Nom de ville</th>
-//                         <th colSpan='2'>ordre de passage</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
-//                     {info?info.villes.map((ville,i) => (
-//             <tr key={i+1}>
-//               <td>{ville}</td>
-//               <td>{i+1}</td>
-//               <td><button onClick={(e)=>e.target.parentNode.parentNode.style.display='none'}>supprimer</button></td>
-//             </tr>
-//           )):''}
-//                 </tbody>
-//             </table>
-//     </div>
-//   )
-// } }
 
 
 
@@ -348,6 +274,12 @@ import "./yaassine/frm.css";
 //     </div>
 //   )
 // }
+
+
+
+
+
+
 
 // function Awc(props){
 //    return(
@@ -368,9 +300,12 @@ import "./yaassine/frm.css";
 // }
 
 
+
+
+
+
+
 // export default function Car() {
-
-
 //     const cmd=[
 
 //     {nom:'yassine',prenom:'dahmouni',age:57},
@@ -393,30 +328,37 @@ import "./yaassine/frm.css";
 // }
 
 
-export default function Car() {
-  const [car, setCar] = useState({
-    brand: "Ford",
-    model: "Mustang",
-    year: "1964",
-    color: "red"
-  });
 
-  const updateColor = () => {
-    setCar(previousState => {
-      return { ...previousState, color: "blue" }
-    });
-  }
 
-  return (
-    <>
-      <h1>My {car.brand}</h1>
-      <p>
-        It is a {car.color} {car.model} from {car.year}
-      </p>
-      <button  type="button" onClick={updateColor}>Blue</button>
-    </>
-  )
-}
+
+
+
+
+
+// export default function Car() {
+//   const [car, setCar] = useState({
+//     brand: "Ford",
+//     model: "Mustang",
+//     year: "1964",
+//     color: "red"
+//   });
+
+//   const updateColor = () => {
+//     setCar(previousState => {
+//       return { ...previousState, color: "blue" }
+//     });
+//   }
+
+//   return (
+//     <>
+//       <h1>My {car.brand}</h1>
+//       <p>
+//         It is a {car.color} {car.model} from {car.year}
+//       </p>
+//       <button  type="button" onClick={updateColor}>Blue</button>
+//     </>
+//   )
+// }
 
 
 
