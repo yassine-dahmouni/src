@@ -1,29 +1,40 @@
 // import AfficherCom from './AfficherCom';
-// import Yas from './yaassine/Yas.css';
 // import "./yaassine/frm.css";
 
 // import Home from './yaassine/Home';
 // import Blog from './yaassine/Blog';
 // import About from './yaassine/About';
+// import Nav from './yaassine/Nav';
+
+
 // import { RouterProvider } from 'react-router-dom';
 // import { createBrowserRouter} from "react-router-dom";
 
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 
 
 
-////////////// url /////////
+
+
+
+
+////////////// link /////////
 
 // function App() {
 
 //   const router = createBrowserRouter([
+    
+//     { path:"/" , element:<Nav />} ,
 
-//     {  path:"/" , element:<Home /> }     ,
+//     {  path:"/home" , element:<Home /> },
 
-//    { path:"/about" , element:<About />}  ,
+//    { path:"/about" , element:<About />},
 
 //     { path:"/blog" , element:<Blog />} 
+
+    
+
 //   ])
 //   return (
 //     <>
